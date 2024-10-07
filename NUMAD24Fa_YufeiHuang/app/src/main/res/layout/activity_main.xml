@@ -24,9 +24,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="About Me"
+        android:backgroundTint="@android:color/black"
         app:layout_constraintTop_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
+    <!-- New Button to launch the Calculator activity -->
+    <Button
+        android:id="@+id/calculator_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quic Calc"
+        android:backgroundTint="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@id/display_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
