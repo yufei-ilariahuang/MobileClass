@@ -1,6 +1,9 @@
 package com.example.numad24fa_yufeihuang;
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         Button displayButton = findViewById(R.id.display_button);
         //calcuator button
         Button calculatorButton = findViewById(R.id.calculator_button);
+        // The contacts collector button
+        Button contactsButton = findViewById(R.id.contact_collector_button);
 
 
         // Set OnClickListener on the button to display a Toast with name and email
@@ -49,5 +54,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        // Set OnClickListener for the contacts collector button
+        contactsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(MainActivity.this, ContactsActivity.class);
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e(TAG, "Error launching contacts", e);
+                    showErrorToast();
+                }
+            }
+        });
+    }
+    private void showErrorToast() {
+        Toast.makeText(this, "Something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
     }
 }
